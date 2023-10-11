@@ -12,6 +12,7 @@ import road from "./Music/road.mp3";
 import bitter from "./Music/bitter.mp3";
 import lmfao from "./Music/lmfao.mp3";
 import toi from "./Music/toi.mp3";
+import marc from "./Music/marc.mp3";
 
 //test import images
 import animalsImg from "./Images/the-animals.jpeg";
@@ -21,6 +22,7 @@ import roadCountry from "./Images/roadCountry.jpg";
 import verve from "./Images/verve.jpg";
 import lmfaoimg from "./Images/lmfaoimg.jpeg";
 import gregoire from "./Images/gregoire.avif";
+import marcImg from "./Images/marc.jpeg";
 
 function App() {
   return (
@@ -38,6 +40,40 @@ function App() {
           name={"Arnaud"}
         />
 
+        <AudioPlayerComp
+          bgColor={"bg-red-400"}
+          songSource={marc}
+          imgSource={marcImg}
+          group={"Marc Lavoine - "}
+          title={"Chère amie"}
+          name={"Angélique"}
+        />
+        {/* ---a finir------------- */}
+        <AudioPlayerComp
+          bgColor={"bg-red-200"}
+          songSource={""}
+          imgSource={""}
+          group={"Soldat Louis - "}
+          title={"Des femmes et du Rhum"}
+          name={"Anaïs"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-red-200"}
+          songSource={""}
+          imgSource={""}
+          group={"Lady Gaga et Bradley Cooper - "}
+          title={"Shallow"}
+          name={"Camille"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-red-200"}
+          songSource={""}
+          imgSource={""}
+          group={"Queen - "}
+          title={"Don't stop me now"}
+          name={"Camille"}
+        />
+        {/* ---------------- */}
         <AudioPlayerComp
           bgColor={"bg-red-500"}
           songSource={toi}
