@@ -75,7 +75,7 @@ function App() {
           showSkipControls
           onClickNext={handleClickNext}
           onEnded={handleEnd}
-          className="pt-6 pb-6 pl-16 pr-16 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 "
+          className="pt-6 pb-6 pl-16 pr-16 bg-purple-400 rounded-full shadow-2xl"
           // Try other props!
         />
       </div>

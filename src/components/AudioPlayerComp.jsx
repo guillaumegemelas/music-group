@@ -11,7 +11,7 @@ function AudioPlayerComp({
 }) {
   return (
     <div
-      className={`${bgColor} p-4 m-4 rounded-lg shadow-md md:flex-row justify-between flex-col flex font-sans`}
+      className={`${bgColor} p-4 m-4 rounded-lg shadow-2xl md:flex-row justify-between flex-col flex font-sans`}
     >
       <div className="mb-6 mr-16 md:mb-0">
         <h2 className="mb-4 text-3xl font-bold ">
