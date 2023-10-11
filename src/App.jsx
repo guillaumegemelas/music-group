@@ -1,5 +1,8 @@
+import { useState } from "react";
 import "./App.css";
-import AudioPlayer from "react-audio-player";
+
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 //import composants
 import AudioPlayerComp from "./components/AudioPlayerComp";
@@ -13,6 +16,8 @@ import bitter from "./Music/bitter.mp3";
 import lmfao from "./Music/lmfao.mp3";
 import toi from "./Music/toi.mp3";
 import marc from "./Music/marc.mp3";
+import strokes from "./Music/strokes.mp3";
+import queen from "./Music/queen.mp3";
 
 //test import images
 import animalsImg from "./Images/the-animals.jpeg";
@@ -23,23 +28,65 @@ import verve from "./Images/verve.jpg";
 import lmfaoimg from "./Images/lmfaoimg.jpeg";
 import gregoire from "./Images/gregoire.avif";
 import marcImg from "./Images/marc.jpeg";
+import strokesImg from "./Images/strokesImg.jpeg";
+import queenImg from "./Images/queenImg.jpg";
 
 function App() {
+  const [currentTrack, setTrackIndex] = useState(0);
+
+  const handleClickNext = () => {
+    console.log("click next");
+    setTrackIndex((currentTrack) =>
+      currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
+    );
+  };
+
+  const handleEnd = () => {
+    console.log("end");
+    setTrackIndex((currentTrack) =>
+      currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
+    );
+  };
+
+  const playlist = [
+    { src: papoutai },
+    { src: animals },
+    { src: bonheur },
+    { src: road },
+    { src: bitter },
+    { src: lmfao },
+    { src: toi },
+    { src: marc },
+    { src: strokes },
+    { src: queen },
+  ];
   return (
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <h1 className="text-center font-bold p-12 text-4xl">
+      <h1 className="p-12 text-4xl font-bold text-center">
         AINspirations nouvelles 😉
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2  gap-4">
+      <div className="w-11/12 mx-auto mb-12 sm:w-1/2">
+        <AudioPlayer
+          volume="0.5"
+          src={playlist[currentTrack].src}
+          showSkipControls
+          onClickNext={handleClickNext}
+          onEnded={handleEnd}
+          className="pt-6 pb-6 pl-16 pr-16 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 "
+          // Try other props!
+        />
+      </div>
+
+      <h1 className="p-12 text-4xl font-bold text-center">En détail...</h1>
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <AudioPlayerComp
           bgColor={"bg-green-500"}
           songSource={papoutai}
           imgSource={stromae}
-          group={"Stromae"}
+          group={"Stromae -"}
           title={"Papaoutai"}
           name={"Arnaud"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-red-400"}
           songSource={marc}
@@ -47,6 +94,23 @@ function App() {
           group={"Marc Lavoine - "}
           title={"Chère amie"}
           name={"Angélique"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-blue-200"}
+          songSource={strokes}
+          imgSource={strokesImg}
+          group={"The Strokes - "}
+          title={"Hard to Explain"}
+          name={"Guillaume"}
+        />
+
+        <AudioPlayerComp
+          bgColor={"bg-yellow-200"}
+          songSource={queen}
+          imgSource={queenImg}
+          group={"Queen - "}
+          title={"Don't stop me now"}
+          name={"Camille"}
         />
         {/* ---a finir------------- */}
         <AudioPlayerComp
@@ -65,14 +129,6 @@ function App() {
           title={"Shallow"}
           name={"Camille"}
         />
-        <AudioPlayerComp
-          bgColor={"bg-red-200"}
-          songSource={""}
-          imgSource={""}
-          group={"Queen - "}
-          title={"Don't stop me now"}
-          name={"Camille"}
-        />
         {/* ---------------- */}
         <AudioPlayerComp
           bgColor={"bg-red-500"}
@@ -82,7 +138,6 @@ function App() {
           title={"Toi + Moi"}
           name={"Sebastien"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-yellow-500"}
           songSource={lmfao}
@@ -91,7 +146,6 @@ function App() {
           title={"Party Rock"}
           name={"Sebastien"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-blue-500"}
           songSource={animals}
@@ -100,7 +154,6 @@ function App() {
           title={"House of the rising sun"}
           name={"Olivier"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-orange-500"}
           songSource={bonheur}
@@ -109,7 +162,6 @@ function App() {
           title={"Il est où le bonheur"}
           name={"Anglélique"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-pink-500"}
           songSource={road}
@@ -118,16 +170,14 @@ function App() {
           title={"Take me home country road"}
           name={"Olivier"}
         />
-
         <AudioPlayerComp
-          bgColor={"bg-purple-500"}
+          bgColor={"bg-purple-400"}
           songSource={bitter}
           imgSource={verve}
           group={"The Verve - "}
           title={"The bitter sweet symphony"}
           name={"Guillaume"}
         />
-
         {/* ------------------------------------------------ */}
       </div>
     </div>
