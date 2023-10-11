@@ -18,6 +18,7 @@ import toi from "./Music/toi.mp3";
 import marc from "./Music/marc.mp3";
 import strokes from "./Music/strokes.mp3";
 import queen from "./Music/queen.mp3";
+import lady from "./Music/lady.mp3";
 
 //test import images
 import animalsImg from "./Images/the-animals.jpeg";
@@ -30,6 +31,7 @@ import gregoire from "./Images/gregoire.avif";
 import marcImg from "./Images/marc.jpeg";
 import strokesImg from "./Images/strokesImg.jpeg";
 import queenImg from "./Images/queenImg.jpg";
+import ladyImg from "./Images/ladyImg.jpg";
 
 function App() {
   const [currentTrack, setTrackIndex] = useState(0);
@@ -59,6 +61,7 @@ function App() {
     { src: marc },
     { src: strokes },
     { src: queen },
+    { src: lady },
   ];
   return (
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -103,13 +106,20 @@ function App() {
           title={"Hard to Explain"}
           name={"Guillaume"}
         />
-
         <AudioPlayerComp
           bgColor={"bg-yellow-200"}
           songSource={queen}
           imgSource={queenImg}
           group={"Queen - "}
           title={"Don't stop me now"}
+          name={"Camille"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-purple-200"}
+          songSource={lady}
+          imgSource={ladyImg}
+          group={"Lady Gaga et Bradley Cooper - "}
+          title={"Shallow"}
           name={"Camille"}
         />
         {/* ---a finir------------- */}
@@ -121,17 +131,9 @@ function App() {
           title={"Des femmes et du Rhum"}
           name={"Anaïs"}
         />
-        <AudioPlayerComp
-          bgColor={"bg-red-200"}
-          songSource={""}
-          imgSource={""}
-          group={"Lady Gaga et Bradley Cooper - "}
-          title={"Shallow"}
-          name={"Camille"}
-        />
         {/* ---------------- */}
         <AudioPlayerComp
-          bgColor={"bg-red-500"}
+          bgColor={"bg-red-400"}
           songSource={toi}
           imgSource={gregoire}
           group={"Grégoire - "}
@@ -155,7 +157,7 @@ function App() {
           name={"Olivier"}
         />
         <AudioPlayerComp
-          bgColor={"bg-orange-500"}
+          bgColor={"bg-orange-400"}
           songSource={bonheur}
           imgSource={bonheurMae}
           group={"Christophe Mae - "}
@@ -163,7 +165,7 @@ function App() {
           name={"Anglélique"}
         />
         <AudioPlayerComp
-          bgColor={"bg-pink-500"}
+          bgColor={"bg-pink-400"}
           songSource={road}
           imgSource={roadCountry}
           group={"John Denver - "}
