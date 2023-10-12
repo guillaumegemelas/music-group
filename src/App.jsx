@@ -58,7 +58,7 @@ function App() {
   const handleLoadingComplete = () => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -102,7 +102,9 @@ function App() {
         </div>
       )}
 
-      <h2 className="p-12 text-2xl font-semibold text-center">En détail...</h2>
+      <h2 className="p-12 text-2xl font-semibold text-center">
+        Playlist détaillée
+      </h2>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <AudioPlayerComp
           bgColor={"bg-emerald-300"}
