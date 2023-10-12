@@ -22,6 +22,7 @@ function AudioPlayerComp({
         </div>
         <div>
           <AudioPlayer controls>
+            {/* j'ai enlevé autoplay */}
             <source src={songSource} />
           </AudioPlayer>
         </div>
