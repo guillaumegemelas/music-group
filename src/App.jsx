@@ -21,6 +21,8 @@ import queen from "./Music/queen.mp3";
 import lady from "./Music/lady.mp3";
 import u2 from "./Music/u2.mp3";
 import louis from "./Music/louis.mp3";
+import oldelaf from "./Music/oldelaf.mp3";
+import bang from "./Music/bang.mp3";
 
 //test import images
 import animalsImg from "./Images/the-animals.jpeg";
@@ -36,6 +38,8 @@ import queenImg from "./Images/queenImg.jpg";
 import ladyImg from "./Images/ladyImg.jpg";
 import u2Img from "./Images/u2Img.jpg";
 import louisImg from "./Images/louisImg.jpg";
+import olde from "./Images/olde.jpg";
+import sinatraImg from "./Images/sinatraImg.jpg";
 
 function App() {
   const [currentTrack, setTrackIndex] = useState(0);
@@ -68,6 +72,8 @@ function App() {
     { src: lady },
     { src: u2 },
     { src: louis },
+    { src: oldelaf },
+    { src: bang },
   ];
   return (
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -115,6 +121,15 @@ function App() {
           name={"Guillaume"}
         />
         <AudioPlayerComp
+          bgColor={"bg-green-200"}
+          songSource={bang}
+          imgSource={sinatraImg}
+          group={"Nancy Sinatra - "}
+          title={"Bang Bang"}
+          name={"Gloria"}
+        />
+
+        <AudioPlayerComp
           bgColor={"bg-fuchsia-200"}
           songSource={queen}
           imgSource={queenImg}
@@ -129,6 +144,14 @@ function App() {
           group={"Lady Gaga et Bradley Cooper - "}
           title={"Shallow"}
           name={"Camille"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-pink-300"}
+          songSource={oldelaf}
+          imgSource={olde}
+          group={"Oldelaf - "}
+          title={"La Tristitude"}
+          name={"Gloria"}
         />
         <AudioPlayerComp
           bgColor={"bg-red-400"}
