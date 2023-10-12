@@ -21,7 +21,7 @@ function AudioPlayerComp({
           </h2>
         </div>
         <div>
-          <AudioPlayer autoPlay controls>
+          <AudioPlayer controls>
             <source src={songSource} />
           </AudioPlayer>
         </div>
