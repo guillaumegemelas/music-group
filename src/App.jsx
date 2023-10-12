@@ -154,14 +154,7 @@ function App() {
           title={"Toi + Moi"}
           name={"Sebastien"}
         />
-        <AudioPlayerComp
-          bgColor={"bg-cyan-200"}
-          songSource={lmfao}
-          imgSource={lmfaoimg}
-          group={"LMFAO - "}
-          title={"Party Rock"}
-          name={"Sebastien"}
-        />
+
         <AudioPlayerComp
           bgColor={"bg-blue-400"}
           songSource={animals}
@@ -177,6 +170,14 @@ function App() {
           group={"Christophe Mae - "}
           title={"Il est où le bonheur"}
           name={"Anglélique"}
+        />
+        <AudioPlayerComp
+          bgColor={"bg-cyan-200"}
+          songSource={lmfao}
+          imgSource={lmfaoimg}
+          group={"LMFAO - "}
+          title={"Party Rock"}
+          name={"Sebastien"}
         />
         <AudioPlayerComp
           bgColor={"bg-pink-400"}
