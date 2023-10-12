@@ -11,16 +11,20 @@ function AudioPlayerComp({
 }) {
   return (
     <div
-      className={`${bgColor} p-4 m-4 rounded-lg shadow-2xl md:flex-row justify-between flex-col flex font-sans`}
+      className={`${bgColor} p-4 m-4 rounded-lg shadow-current shadow-xl md:flex-row justify-between flex-col flex font-sans  hover:shadow-2xl hover:shadow-current`}
     >
-      <div className="mb-6 mr-16 md:mb-0">
-        <h2 className="mb-4 text-3xl font-bold ">
-          {group}
-          <span className="text-xl font-normal">{title}</span>{" "}
-        </h2>
-        <AudioPlayer autoPlay controls>
-          <source src={songSource} />
-        </AudioPlayer>
+      <div className="mb-6 mr-16 md:mb-0 cssPerso">
+        <div>
+          <h2 className="mb-4 text-3xl font-bold ">
+            {group}
+            <span className="text-xl font-normal">{title}</span>{" "}
+          </h2>
+        </div>
+        <div>
+          <AudioPlayer autoPlay controls>
+            <source src={songSource} />
+          </AudioPlayer>
+        </div>
       </div>
       <div className="flex items-end justify-between md:flex-col">
         <img

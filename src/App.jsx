@@ -19,6 +19,8 @@ import marc from "./Music/marc.mp3";
 import strokes from "./Music/strokes.mp3";
 import queen from "./Music/queen.mp3";
 import lady from "./Music/lady.mp3";
+import u2 from "./Music/u2.mp3";
+import louis from "./Music/louis.mp3";
 
 //test import images
 import animalsImg from "./Images/the-animals.jpeg";
@@ -32,6 +34,8 @@ import marcImg from "./Images/marc.jpeg";
 import strokesImg from "./Images/strokesImg.jpeg";
 import queenImg from "./Images/queenImg.jpg";
 import ladyImg from "./Images/ladyImg.jpg";
+import u2Img from "./Images/u2Img.jpg";
+import louisImg from "./Images/louisImg.jpg";
 
 function App() {
   const [currentTrack, setTrackIndex] = useState(0);
@@ -62,13 +66,15 @@ function App() {
     { src: strokes },
     { src: queen },
     { src: lady },
+    { src: u2 },
+    { src: louis },
   ];
   return (
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <h1 className="p-12 text-4xl font-bold text-center">
+      <h1 className="p-12 text-4xl antialiased font-bold text-center shadow-xl">
         AINspirations nouvelles 😉
       </h1>
-      <div className="w-11/12 mx-auto mb-12 sm:w-1/2">
+      <div className="w-11/12 mx-auto mt-12 mb-12 sm:w-1/2">
         <AudioPlayer
           volume="0.5"
           src={playlist[currentTrack].src}
@@ -80,10 +86,10 @@ function App() {
         />
       </div>
 
-      <h1 className="p-12 text-4xl font-bold text-center">En détail...</h1>
+      <h2 className="p-12 text-2xl font-semibold text-center">En détail...</h2>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <AudioPlayerComp
-          bgColor={"bg-green-500"}
+          bgColor={"bg-emerald-300"}
           songSource={papoutai}
           imgSource={stromae}
           group={"Stromae -"}
@@ -91,7 +97,7 @@ function App() {
           name={"Arnaud"}
         />
         <AudioPlayerComp
-          bgColor={"bg-red-400"}
+          bgColor={"bg-sky-300"}
           songSource={marc}
           imgSource={marcImg}
           group={"Marc Lavoine - "}
@@ -107,7 +113,7 @@ function App() {
           name={"Guillaume"}
         />
         <AudioPlayerComp
-          bgColor={"bg-yellow-200"}
+          bgColor={"bg-fuchsia-200"}
           songSource={queen}
           imgSource={queenImg}
           group={"Queen - "}
@@ -115,25 +121,33 @@ function App() {
           name={"Camille"}
         />
         <AudioPlayerComp
-          bgColor={"bg-purple-200"}
+          bgColor={"bg-rose-300"}
           songSource={lady}
           imgSource={ladyImg}
           group={"Lady Gaga et Bradley Cooper - "}
           title={"Shallow"}
           name={"Camille"}
         />
-        {/* ---a finir------------- */}
         <AudioPlayerComp
-          bgColor={"bg-red-200"}
-          songSource={""}
-          imgSource={""}
+          bgColor={"bg-red-400"}
+          songSource={u2}
+          imgSource={u2Img}
+          group={"U2 - "}
+          title={"Sunday bloody Sunday"}
+          name={"Arnaud"}
+        />
+
+        <AudioPlayerComp
+          bgColor={"bg-amber-200"}
+          songSource={louis}
+          imgSource={louisImg}
           group={"Soldat Louis - "}
           title={"Des femmes et du Rhum"}
           name={"Anaïs"}
         />
-        {/* ---------------- */}
+
         <AudioPlayerComp
-          bgColor={"bg-red-400"}
+          bgColor={"bg-neutral-300"}
           songSource={toi}
           imgSource={gregoire}
           group={"Grégoire - "}
@@ -141,7 +155,7 @@ function App() {
           name={"Sebastien"}
         />
         <AudioPlayerComp
-          bgColor={"bg-yellow-500"}
+          bgColor={"bg-cyan-200"}
           songSource={lmfao}
           imgSource={lmfaoimg}
           group={"LMFAO - "}
@@ -149,7 +163,7 @@ function App() {
           name={"Sebastien"}
         />
         <AudioPlayerComp
-          bgColor={"bg-blue-500"}
+          bgColor={"bg-blue-400"}
           songSource={animals}
           imgSource={animalsImg}
           group={"The animals - "}

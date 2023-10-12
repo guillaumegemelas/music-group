@@ -1,0 +1,6 @@
+.cssPerso {
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  justify-content: space-between;
+}
