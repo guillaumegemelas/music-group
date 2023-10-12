@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import AudioPlayer from "react-h5-audio-player";
@@ -39,6 +39,7 @@ import louisImg from "./Images/louisImg.jpg";
 
 function App() {
   const [currentTrack, setTrackIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const handleClickNext = () => {
     console.log("click next");
@@ -53,6 +54,16 @@ function App() {
       currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
     );
   };
+
+  const handleLoadingComplete = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    handleLoadingComplete();
+  }, []);
 
   const playlist = [
     { src: papoutai },
@@ -74,17 +85,22 @@ function App() {
       <h1 className="p-12 text-4xl antialiased font-bold text-center shadow-xl">
         AINspirations nouvelles 😉
       </h1>
-      <div className="w-11/12 mx-auto mt-12 mb-12 sm:w-1/2">
-        <AudioPlayer
-          volume="0.5"
-          src={playlist[currentTrack].src}
-          showSkipControls
-          onClickNext={handleClickNext}
-          onEnded={handleEnd}
-          className="pt-6 pb-6 pl-16 pr-16 bg-purple-400 rounded-full shadow-2xl"
-          // Try other props!
-        />
-      </div>
+      {loading ? (
+        <div className="w-11/12 mx-auto mt-24 mb-24 text-center text-white sm:w-1/2">
+          <p>Chargement en cours...</p>
+        </div>
+      ) : (
+        <div className="w-11/12 mx-auto mt-12 mb-12 sm:w-1/2">
+          <AudioPlayer
+            volume="0.5"
+            src={playlist[currentTrack].src}
+            showSkipControls
+            onClickNext={handleClickNext}
+            onEnded={handleEnd}
+            className="pt-6 pb-6 pl-16 pr-16 bg-purple-400 rounded-full shadow-2xl"
+          />
+        </div>
+      )}
 
       <h2 className="p-12 text-2xl font-semibold text-center">En détail...</h2>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
